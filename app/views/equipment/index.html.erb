@@ -1,0 +1,39 @@
+<h1> GetSmarter | Equipment </h1> 
+<h3> INDEX VIEW </h3>
+
+<%= link_to 'Add New Equipment', new_equipment_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Serial Number</th>
+      <th>Employee</th>
+      <th>Status</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @equipment.each do |equipment| %>
+      <tr>
+        <td><%= equipment.name %></td>
+        <td><%= equipment.equipment_type %></td>
+        <td><%= equipment.serial_no %></td>
+        <td><%= equipment.employee %></td>
+        <td><%= equipment.status %></td>
+        <td><%= link_to 'Edit', edit_equipment_path(equipment) %></td>
+        <td><%= link_to 'Delete', equipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      
+    
+  </tbody>
+</table>
+
+  
+
+
+<br>
+
+<% end %>

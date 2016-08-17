@@ -1,0 +1,37 @@
+<h1> NEW VIEW </h1>
+
+<h3> Add New Equipment </h3>
+
+<%= form_for(@equipment) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :equipment_type %>
+    <%= f.text_field :equipment_type %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :serial_no %>
+    <%= f.text_field :serial_no %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :employee %>
+    <%= f.text_field :employee %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'View All Equipment', @equipment %>
