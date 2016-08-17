@@ -1,8 +1,5 @@
 <h1> GetSmarter | Equipment </h1> 
-<h4> SHOW view</h4>
-
-
-<h1> SHOW | List of Equipment </h1> 
+<h2> SHOW | List of Equipment </h2> 
 
 <table>
   <thead>
@@ -17,20 +14,20 @@
   </thead>
 
   <tbody>
-     <% @equipment.each do |equipment| %>
+     <% @equipment.each do |equip| %>
       <tr>
-        <td><%= @equipment.name %></td>
-        <td><%= @equipment.equipment_type %></td>
-        <td><%= @equipment.serial_no %></td>
-        <td><%= @equipment.employee %></td>
-        <td><%= @equipment.status %></td>
-        <td><%= link_to 'Edit', edit_equipment_path(equipment) %></td>
-        <td><%= link_to 'Delete', equipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= equip.name %></td>
+        <td><%= equip.equipment_type %></td>
+        <td><%= equip.serial_no %></td>
+        <td><%= equip.employee %></td>
+        <td><%= equip.status %></td>
+        <td><%= link_to 'Edit', edit_equipment_path(equip) %></td>
+        <td><%= link_to 'Delete', equip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<br>
 <%= link_to 'Add New Equipment', new_equipment_path %>
 
 
