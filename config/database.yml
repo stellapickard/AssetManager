@@ -9,7 +9,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: asset-manager-test
+  database: asset_manager
   pool: 5
   username: root
   password: root
