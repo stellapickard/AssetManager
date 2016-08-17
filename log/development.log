@@ -7316,3 +7316,829 @@ Processing by EquipmentController#index as HTML
 Completed 200 OK in 29ms (Views: 25.4ms | ActiveRecord: 0.4ms)
 
 
+Started DELETE "/equipment/14" for ::1 at 2016-08-17 12:46:21 +0200
+Processing by EquipmentController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CWWLfmjsV1h+eNSd4j7s5fb4gcyT1y8k1Ytd/QthiKvpMhsK/cpds/uSjqzvDQNzjbxGYxbqcuqFxlR+6zlspw==", "id"=>"14"}
+  [1m[36mEquipment Load (0.8ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 14 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM `equipment` WHERE `equipment`.`id` = 14[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/equipment/14
+Completed 302 Found in 42ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/equipment/14" for ::1 at 2016-08-17 12:46:21 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"14"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.9ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (21.0ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `equipment_type' for #<Equipment::ActiveRecord_Relation:0x007fd3ba7991f0>):
+    20:      <% @equipment.each do |equipment| %>
+    21:       <tr>
+    22:         <td><%= @equipment.name %></td>
+    23:         <td><%= @equipment.equipment_type %></td>
+    24:         <td><%= @equipment.serial_no %></td>
+    25:         <td><%= @equipment.employee %></td>
+    26:         <td><%= @equipment.status %></td>
+  
+app/views/equipment/show.html.erb:23:in `block in _app_views_equipment_show_html_erb__88721985062359880_70273671645760'
+app/views/equipment/show.html.erb:20:in `_app_views_equipment_show_html_erb__88721985062359880_70273671645760'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.2ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (90.2ms)
+Started GET "/equipment/" for ::1 at 2016-08-17 12:46:40 +0200
+Processing by EquipmentController#index as HTML
+  Rendering equipment/index.html.erb within layouts/application
+  [1m[36mEquipment Load (0.5ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 84ms (Views: 78.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/equipment/new" for ::1 at 2016-08-17 12:49:07 +0200
+Processing by EquipmentController#new as HTML
+  Rendering equipment/new.html.erb within layouts/application
+  Rendered equipment/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 42ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equipment" for ::1 at 2016-08-17 12:49:13 +0200
+Processing by EquipmentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2aBL9fBf/Ufd0n49LpaKdJhT55XHmlX+frK8al5x0b1PCfYoPP4iBbCu1HKfcnjznxLwqyWcUlZoki6Nla6DsA==", "equipment"=>{"name"=>"yo", "equipment_type"=>"yo", "serial_no"=>"yo", "employee"=>"yo", "status"=>"yo"}, "commit"=>"Create Equipment"}
+Unpermitted parameter: name
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `equipment` (`equipment_type`, `serial_no`, `employee`, `status`, `created_at`, `updated_at`) VALUES ('yo', 'yo', 'yo', 'yo', '2016-08-17 10:49:13', '2016-08-17 10:49:13')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/equipment/44
+Completed 302 Found in 13ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/equipment/44" for ::1 at 2016-08-17 12:49:13 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"44"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.5ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `equipment_type' for #<Equipment::ActiveRecord_Relation:0x007fd3c32e82d8>):
+    20:      <% @equipment.each do |equipment| %>
+    21:       <tr>
+    22:         <td><%= @equipment.name %></td>
+    23:         <td><%= @equipment.equipment_type %></td>
+    24:         <td><%= @equipment.serial_no %></td>
+    25:         <td><%= @equipment.employee %></td>
+    26:         <td><%= @equipment.status %></td>
+  
+app/views/equipment/show.html.erb:23:in `block in _app_views_equipment_show_html_erb__88721985062359880_70273740082500'
+app/views/equipment/show.html.erb:20:in `_app_views_equipment_show_html_erb__88721985062359880_70273740082500'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.3ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (66.6ms)
+Started GET "/equipment" for ::1 at 2016-08-17 12:49:19 +0200
+Processing by EquipmentController#index as HTML
+  Rendering equipment/index.html.erb within layouts/application
+  [1m[36mEquipment Load (0.6ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 35ms (Views: 32.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/equipment/new" for ::1 at 2016-08-17 12:50:53 +0200
+Processing by EquipmentController#new as HTML
+  Rendering equipment/new.html.erb within layouts/application
+  Rendered equipment/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 40ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equipment" for ::1 at 2016-08-17 12:50:55 +0200
+Processing by EquipmentController#index as HTML
+  Rendering equipment/index.html.erb within layouts/application
+  [1m[36mEquipment Load (0.9ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 45ms (Views: 40.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/equipment/16/edit" for ::1 at 2016-08-17 12:50:58 +0200
+Processing by EquipmentController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mEquipment Load (1.2ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 16 LIMIT 1[0m
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.2ms)
+
+
+  
+NoMethodError (undefined method `edit' for #<Equipment:0x007fd3c1963920>):
+  
+app/controllers/equipment_controller.rb:30:in `edit'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.3ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.2ms)
+Started GET "/equipment" for ::1 at 2016-08-17 12:51:05 +0200
+Processing by EquipmentController#index as HTML
+  Rendering equipment/index.html.erb within layouts/application
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 27ms (Views: 23.5ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/equipment/18" for ::1 at 2016-08-17 12:51:09 +0200
+Processing by EquipmentController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/6EdIi2BPwZfMdhM+ASjpHTDoMT/Kqm8h4fg0aNIxNIf9o1WuKc17drbgn31N0wyD4dna3oX9HLXyulSQxAg3g==", "id"=>"18"}
+  [1m[36mEquipment Load (0.4ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 18 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM `equipment` WHERE `equipment`.`id` = 18[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/equipment/18
+Completed 302 Found in 6ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/equipment/18" for ::1 at 2016-08-17 12:51:09 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"18"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.4ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (12.5ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `equipment_type' for #<Equipment::ActiveRecord_Relation:0x007fd3c34262f8>):
+    20:      <% @equipment.each do |equipment| %>
+    21:       <tr>
+    22:         <td><%= @equipment.name %></td>
+    23:         <td><%= @equipment.equipment_type %></td>
+    24:         <td><%= @equipment.serial_no %></td>
+    25:         <td><%= @equipment.employee %></td>
+    26:         <td><%= @equipment.status %></td>
+  
+app/views/equipment/show.html.erb:23:in `block in _app_views_equipment_show_html_erb__88721985062359880_70273745364820'
+app/views/equipment/show.html.erb:20:in `_app_views_equipment_show_html_erb__88721985062359880_70273745364820'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (73.5ms)
+Started DELETE "/equipment/12" for ::1 at 2016-08-17 12:53:58 +0200
+Processing by EquipmentController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/6EdIi2BPwZfMdhM+ASjpHTDoMT/Kqm8h4fg0aNIxNIf9o1WuKc17drbgn31N0wyD4dna3oX9HLXyulSQxAg3g==", "id"=>"12"}
+  [1m[36mEquipment Load (0.5ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 12 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM `equipment` WHERE `equipment`.`id` = 12[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/equipment/12
+Completed 302 Found in 7ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/equipment/12" for ::1 at 2016-08-17 12:53:58 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"12"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.4ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (10.8ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `equipment_type' for #<Equipment::ActiveRecord_Relation:0x007fd3c2ab16a0>):
+    20:      <% @equipment.each do |equipment| %>
+    21:       <tr>
+    22:         <td><%= @equipment.name %></td>
+    23:         <td><%= @equipment.equipment_type %></td>
+    24:         <td><%= @equipment.serial_no %></td>
+    25:         <td><%= @equipment.employee %></td>
+    26:         <td><%= @equipment.status %></td>
+  
+app/views/equipment/show.html.erb:23:in `block in _app_views_equipment_show_html_erb__88721985062359880_70273740407300'
+app/views/equipment/show.html.erb:20:in `_app_views_equipment_show_html_erb__88721985062359880_70273740407300'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.7ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (75.9ms)
+Started GET "/equipment" for ::1 at 2016-08-17 12:54:09 +0200
+Processing by EquipmentController#index as HTML
+  Rendering equipment/index.html.erb within layouts/application
+  [1m[36mEquipment Load (0.4ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 32ms (Views: 26.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/equipment/15" for ::1 at 2016-08-17 12:54:16 +0200
+Processing by EquipmentController#destroy as HTML
+  Parameters: {"authenticity_token"=>"T0cd88RuXj0jFqqWW9a/qiZJp8TOW6aouGB+bri6rGWvEI2HUUhU1qb88KdW5VA8XQ1ga0tm+2boLXftWOJIaQ==", "id"=>"15"}
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 15 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM `equipment` WHERE `equipment`.`id` = 15[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/equipment/15
+Completed 302 Found in 6ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/equipment/15" for ::1 at 2016-08-17 12:54:16 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"15"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.6ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (11.2ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `equipment_type' for #<Equipment::ActiveRecord_Relation:0x007fd3c1e4f060>):
+    20:      <% @equipment.each do |equipment| %>
+    21:       <tr>
+    22:         <td><%= @equipment.name %></td>
+    23:         <td><%= @equipment.equipment_type %></td>
+    24:         <td><%= @equipment.serial_no %></td>
+    25:         <td><%= @equipment.employee %></td>
+    26:         <td><%= @equipment.status %></td>
+  
+app/views/equipment/show.html.erb:23:in `block in _app_views_equipment_show_html_erb__88721985062359880_70273733912580'
+app/views/equipment/show.html.erb:20:in `_app_views_equipment_show_html_erb__88721985062359880_70273733912580'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (68.4ms)
+Started GET "/equipment" for ::1 at 2016-08-17 12:54:22 +0200
+Processing by EquipmentController#index as HTML
+  Rendering equipment/index.html.erb within layouts/application
+  [1m[36mEquipment Load (0.5ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/equipment/new" for ::1 at 2016-08-17 12:56:00 +0200
+Processing by EquipmentController#new as HTML
+  Rendering equipment/new.html.erb within layouts/application
+  Rendered equipment/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 35ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/equipment" for ::1 at 2016-08-17 12:56:03 +0200
+Processing by EquipmentController#index as HTML
+  Rendering equipment/index.html.erb within layouts/application
+  [1m[36mEquipment Load (0.7ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 44ms (Views: 41.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/equipment/new" for ::1 at 2016-08-17 12:56:05 +0200
+Processing by EquipmentController#new as HTML
+  Rendering equipment/new.html.erb within layouts/application
+  Rendered equipment/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equipment" for ::1 at 2016-08-17 12:56:15 +0200
+Processing by EquipmentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mCVoBwF0qzGrGRkKASEfLbIv/OGzUHsGesSWyPOVuR8OjNXazdV0c8Zls0Wwxe2qtW7r31FWfK5s5AQvOErrEg==", "equipment"=>{"name"=>"uo", "equipment_type"=>"uo", "serial_no"=>"uo", "employee"=>"uo", "status"=>"uo"}, "commit"=>"Create Equipment"}
+Unpermitted parameter: name
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `equipment` (`equipment_type`, `serial_no`, `employee`, `status`, `created_at`, `updated_at`) VALUES ('uo', 'uo', 'uo', 'uo', '2016-08-17 10:56:15', '2016-08-17 10:56:15')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/equipment/45
+Completed 302 Found in 11ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/equipment/45" for ::1 at 2016-08-17 12:56:15 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"45"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (10.0ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `equipment_type' for #<Equipment::ActiveRecord_Relation:0x007fd3c2a30898>):
+    20:      <% @equipment.each do |equipment| %>
+    21:       <tr>
+    22:         <td><%= @equipment.name %></td>
+    23:         <td><%= @equipment.equipment_type %></td>
+    24:         <td><%= @equipment.serial_no %></td>
+    25:         <td><%= @equipment.employee %></td>
+    26:         <td><%= @equipment.status %></td>
+  
+app/views/equipment/show.html.erb:23:in `block in _app_views_equipment_show_html_erb__88721985062359880_70273741388480'
+app/views/equipment/show.html.erb:20:in `_app_views_equipment_show_html_erb__88721985062359880_70273741388480'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (61.3ms)
+Started GET "/equipment/" for ::1 at 2016-08-17 12:59:34 +0200
+Processing by EquipmentController#index as HTML
+  Rendering equipment/index.html.erb within layouts/application
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 26ms (Views: 23.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/equipment/new" for ::1 at 2016-08-17 12:59:46 +0200
+Processing by EquipmentController#new as HTML
+  Rendering equipment/new.html.erb within layouts/application
+  Rendered equipment/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equipment" for ::1 at 2016-08-17 12:59:54 +0200
+Processing by EquipmentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h7HinwMT7tteAnk4DaZJ2lYAU74kA5sa4W2KLme4YXYRGF9Cz7IxmTN+03e8QrtdUUFEgMYFnLL3TRjJrGczew==", "equipment"=>{"name"=>"tutu", "equipment_type"=>"tutut", "serial_no"=>"ugtuttu", "employee"=>"jfjf", "status"=>"jfjff"}, "commit"=>"Create Equipment"}
+Unpermitted parameter: name
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `equipment` (`equipment_type`, `serial_no`, `employee`, `status`, `created_at`, `updated_at`) VALUES ('tutut', 'ugtuttu', 'jfjf', 'jfjff', '2016-08-17 10:59:54', '2016-08-17 10:59:54')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/equipment/46
+Completed 302 Found in 11ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/equipment/46" for ::1 at 2016-08-17 12:59:54 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"46"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (12.3ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `equipment_type' for #<Equipment::ActiveRecord_Relation:0x007fd3c41525f8>):
+    20:      <% @equipment.each do |equipment| %>
+    21:       <tr>
+    22:         <td><%= @equipment.name %></td>
+    23:         <td><%= @equipment.equipment_type %></td>
+    24:         <td><%= @equipment.serial_no %></td>
+    25:         <td><%= @equipment.employee %></td>
+    26:         <td><%= @equipment.status %></td>
+  
+app/views/equipment/show.html.erb:23:in `block in _app_views_equipment_show_html_erb__88721985062359880_70273752269980'
+app/views/equipment/show.html.erb:20:in `_app_views_equipment_show_html_erb__88721985062359880_70273752269980'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.7ms)
+Started GET "/equipment/" for ::1 at 2016-08-17 13:00:03 +0200
+Processing by EquipmentController#index as HTML
+  Rendering equipment/index.html.erb within layouts/application
+  [1m[36mEquipment Load (0.4ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 40ms (Views: 37.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/equipment/" for ::1 at 2016-08-17 13:00:04 +0200
+Processing by EquipmentController#index as HTML
+  Rendering equipment/index.html.erb within layouts/application
+  [1m[36mEquipment Load (0.4ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 41ms (Views: 37.4ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/equipment/16" for ::1 at 2016-08-17 13:01:07 +0200
+Processing by EquipmentController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QT1o+TqyKIye33mpCWflixRAOQNqUg/Y3BHik/N+xLShaviNr5QiZxs1I5gEVAodbwT+rO9vUhaMXOsQEyYguA==", "id"=>"16"}
+  [1m[36mEquipment Load (0.7ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 16 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM `equipment` WHERE `equipment`.`id` = 16[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/equipment/16
+Completed 302 Found in 8ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/equipment/16" for ::1 at 2016-08-17 13:01:07 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"16"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (26.4ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `equipment_type' for #<Equipment::ActiveRecord_Relation:0x007fd3bc863c78>):
+    20:      <% @equipment.each do |equipment| %>
+    21:       <tr>
+    22:         <td><%= @equipment.name %></td>
+    23:         <td><%= @equipment.equipment_type %></td>
+    24:         <td><%= @equipment.serial_no %></td>
+    25:         <td><%= @equipment.employee %></td>
+    26:         <td><%= @equipment.status %></td>
+  
+app/views/equipment/show.html.erb:23:in `block in _app_views_equipment_show_html_erb__88721985062359880_70273688848140'
+app/views/equipment/show.html.erb:20:in `_app_views_equipment_show_html_erb__88721985062359880_70273688848140'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (67.8ms)
+Started PUT "/__web_console/repl_sessions/4b6e9832ac770aa81390aee0511bae30" for ::1 at 2016-08-17 13:02:16 +0200
+Started PUT "/__web_console/repl_sessions/4b6e9832ac770aa81390aee0511bae30" for ::1 at 2016-08-17 13:02:34 +0200
+Started PUT "/__web_console/repl_sessions/4b6e9832ac770aa81390aee0511bae30" for ::1 at 2016-08-17 13:02:44 +0200
+Started PUT "/__web_console/repl_sessions/4b6e9832ac770aa81390aee0511bae30" for ::1 at 2016-08-17 13:03:24 +0200
+Started PUT "/__web_console/repl_sessions/4b6e9832ac770aa81390aee0511bae30" for ::1 at 2016-08-17 13:03:34 +0200
+Started PUT "/__web_console/repl_sessions/4b6e9832ac770aa81390aee0511bae30" for ::1 at 2016-08-17 13:03:48 +0200
+Started PUT "/__web_console/repl_sessions/4b6e9832ac770aa81390aee0511bae30" for ::1 at 2016-08-17 13:04:05 +0200
+Started PUT "/__web_console/repl_sessions/4b6e9832ac770aa81390aee0511bae30" for ::1 at 2016-08-17 13:04:07 +0200
+Started PUT "/__web_console/repl_sessions/4b6e9832ac770aa81390aee0511bae30" for ::1 at 2016-08-17 13:04:14 +0200
+Started GET "/equipment/16" for ::1 at 2016-08-17 13:05:43 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"16"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.6ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 64ms (Views: 61.7ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/equipment/19" for ::1 at 2016-08-17 13:05:52 +0200
+Processing by EquipmentController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GPJXKApkODke9d/1Ez55VOUxdp+JmZOKSYyKD/Gy0X34pcdcn0Iy0psfhcQeDZbCnnWxMAykzkQZwYOMEeo1cQ==", "id"=>"19"}
+  [1m[36mEquipment Load (0.6ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 19 LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM `equipment` WHERE `equipment`.`id` = 19[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/equipment/19
+Completed 302 Found in 10ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/equipment/19" for ::1 at 2016-08-17 13:05:52 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"19"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/equipment/22/edit" for ::1 at 2016-08-17 13:06:28 +0200
+Processing by EquipmentController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mEquipment Load (0.6ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 22 LIMIT 1[0m
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `edit' for #<Equipment:0x007fd3c41606d0>):
+  
+app/controllers/equipment_controller.rb:30:in `edit'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (80.3ms)
+Started GET "/equipment/19" for ::1 at 2016-08-17 13:07:01 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"19"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.4ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 82ms (Views: 66.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/equipment/new" for ::1 at 2016-08-17 13:07:06 +0200
+Processing by EquipmentController#new as HTML
+  Rendering equipment/new.html.erb within layouts/application
+  Rendered equipment/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 37ms (Views: 30.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equipment" for ::1 at 2016-08-17 13:07:13 +0200
+Processing by EquipmentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OKt2f0y00l9P1VxBolTfyPMFXfD97cigjrAAKvsNY/GuAsuigBUNHSKp9g4TsC1P9ERKzh/rzwiYkJLNMNIx/A==", "equipment"=>{"name"=>"we", "equipment_type"=>"we", "serial_no"=>"we", "employee"=>"we", "status"=>"we"}, "commit"=>"Create Equipment"}
+Unpermitted parameter: name
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `equipment` (`equipment_type`, `serial_no`, `employee`, `status`, `created_at`, `updated_at`) VALUES ('we', 'we', 'we', 'we', '2016-08-17 11:07:13', '2016-08-17 11:07:13')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/equipment/47
+Completed 302 Found in 11ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/equipment/47" for ::1 at 2016-08-17 13:07:13 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"47"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/equipment/28/edit" for ::1 at 2016-08-17 13:13:59 +0200
+Processing by EquipmentController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mEquipment Load (0.4ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 28 LIMIT 1[0m
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `edit' for #<Equipment:0x007fd3bafaf010>):
+  
+app/controllers/equipment_controller.rb:30:in `edit'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.0ms)
+Started GET "/equipment/47" for ::1 at 2016-08-17 13:20:49 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"47"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.5ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 113ms (Views: 94.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/equipment/24/edit" for ::1 at 2016-08-17 13:20:51 +0200
+Processing by EquipmentController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 24 LIMIT 1[0m
+  Rendering equipment/edit.html.erb within layouts/application
+  Rendered equipment/edit.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/stellapickard/Documents/GetSmarter/AssetManager/app/views/equipment/edit.html.erb:5: syntax error, unexpected ':', expecting keyword_end
+...'.freeze; form_for @equipment :url => {:action => "edit"}, :...
+...                               ^
+/Users/stellapickard/Documents/GetSmarter/AssetManager/app/views/equipment/edit.html.erb:5: syntax error, unexpected ',', expecting keyword_end
+...nt :url => {:action => "edit"}, :method => "post" do |f| 
+...                               ^
+/Users/stellapickard/Documents/GetSmarter/AssetManager/app/views/equipment/edit.html.erb:5: syntax error, unexpected keyword_do, expecting keyword_end
+...> "edit"}, :method => "post" do |f| 
+...                               ^
+/Users/stellapickard/Documents/GetSmarter/AssetManager/app/views/equipment/edit.html.erb:38: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/equipment/edit.html.erb:5: syntax error, unexpected ':', expecting keyword_end
+app/views/equipment/edit.html.erb:5: syntax error, unexpected ',', expecting keyword_end
+app/views/equipment/edit.html.erb:5: syntax error, unexpected keyword_do, expecting keyword_end
+app/views/equipment/edit.html.erb:38: syntax error, unexpected keyword_ensure, expecting end-of-input
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.4ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.5ms)
+Started GET "/equipment/47" for ::1 at 2016-08-17 13:21:23 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"47"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.5ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 95ms (Views: 89.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/equipment/23/edit" for ::1 at 2016-08-17 13:21:25 +0200
+Processing by EquipmentController#edit as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mEquipment Load (0.4ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 23 LIMIT 1[0m
+  Rendering equipment/edit.html.erb within layouts/application
+  Rendered equipment/edit.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 48ms (Views: 44.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/equipment/47" for ::1 at 2016-08-17 13:21:41 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"47"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.5ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 41ms (Views: 35.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/equipment/22/edit" for ::1 at 2016-08-17 13:21:44 +0200
+Processing by EquipmentController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mEquipment Load (0.4ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 22 LIMIT 1[0m
+  Rendering equipment/edit.html.erb within layouts/application
+  Rendered equipment/edit.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 41ms (Views: 34.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/equipment/22/edit" for ::1 at 2016-08-17 13:22:14 +0200
+Processing by EquipmentController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mEquipment Load (0.5ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 22 LIMIT 1[0m
+  Rendering equipment/edit.html.erb within layouts/application
+  Rendered equipment/edit.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 33ms (Views: 29.0ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/equipment/22" for ::1 at 2016-08-17 13:22:20 +0200
+Processing by EquipmentController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zjNiyJ7nwRHIbXiiD0AwbTXJ8O8DdYpqo8lu2e0G4pguZPK8C8HL+k2HIpMCc9/7To03QIZI16TzhGdaDV4GlA==", "equipment"=>{"name"=>"yoyoyoyoy", "equipment_type"=>"desk", "serial_no"=>"4567", "employee"=>"David", "status"=>"employee"}, "commit"=>"Update Equipment", "id"=>"22"}
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 22 LIMIT 1[0m
+Unpermitted parameter: name
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/equipment/22
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/equipment/22" for ::1 at 2016-08-17 13:22:20 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"22"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 65ms (Views: 62.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/equipment/24/edit" for ::1 at 2016-08-17 13:22:33 +0200
+Processing by EquipmentController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 24 LIMIT 1[0m
+  Rendering equipment/edit.html.erb within layouts/application
+  Rendered equipment/edit.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 35ms (Views: 31.3ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/equipment/24" for ::1 at 2016-08-17 13:22:45 +0200
+Processing by EquipmentController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"elDoIaatxoFiORZnudqZdebQkcZDd6xFG7v562S+itXtSMFcP9Q2KAeGTucS9LPsO5AIpid5+imGei5gO6f3zA==", "equipment"=>{"name"=>"", "equipment_type"=>"desk", "serial_no"=>"4567", "employee"=>"Maresa", "status"=>"employee"}, "commit"=>"Update Equipment", "id"=>"24"}
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 24 LIMIT 1[0m
+Unpermitted parameter: name
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[33mUPDATE `equipment` SET `employee` = 'Maresa', `updated_at` = '2016-08-17 11:22:45' WHERE `equipment`.`id` = 24[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/equipment/24
+Completed 302 Found in 15ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/equipment/24" for ::1 at 2016-08-17 13:22:46 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"24"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.4ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/equipment/new" for ::1 at 2016-08-17 13:23:19 +0200
+Processing by EquipmentController#new as HTML
+  Rendering equipment/new.html.erb within layouts/application
+  Rendered equipment/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 36ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/equipment" for ::1 at 2016-08-17 13:23:37 +0200
+Processing by EquipmentController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zo0Vbre5FCdcxGfs5oEb+DV7xDtPNUDlxcyphojIccZYJKizexjLZTG4zaNXZel/MjrTBa0zR03T7DthQxcjyw==", "equipment"=>{"name"=>"Acer", "equipment_type"=>"Laptop", "serial_no"=>"9876", "employee"=>"Leo", "status"=>"employee"}, "commit"=>"Create Equipment"}
+Unpermitted parameter: name
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `equipment` (`equipment_type`, `serial_no`, `employee`, `status`, `created_at`, `updated_at`) VALUES ('Laptop', '9876', 'Leo', 'employee', '2016-08-17 11:23:37', '2016-08-17 11:23:37')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/equipment/48
+Completed 302 Found in 10ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/equipment/48" for ::1 at 2016-08-17 13:23:37 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"48"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 30ms (Views: 27.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/equipment/45/edit" for ::1 at 2016-08-17 13:23:45 +0200
+Processing by EquipmentController#edit as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 45 LIMIT 1[0m
+  Rendering equipment/edit.html.erb within layouts/application
+  Rendered equipment/edit.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 37ms (Views: 33.9ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/equipment/45" for ::1 at 2016-08-17 13:23:49 +0200
+Processing by EquipmentController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vm7uSOFCbFmZkMDRQQTZaydx7SPpyMdHestVd1kv7Td3Liitzq75JS0W298EzwmA1DA0T/wB7pqqJfBceiVy5A==", "equipment"=>{"name"=>"", "equipment_type"=>"uo", "serial_no"=>"uo", "employee"=>"Rio", "status"=>"uo"}, "commit"=>"Update Equipment", "id"=>"45"}
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 45 LIMIT 1[0m
+Unpermitted parameter: name
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE `equipment` SET `employee` = 'Rio', `updated_at` = '2016-08-17 11:23:49' WHERE `equipment`.`id` = 45[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/equipment/45
+Completed 302 Found in 7ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/equipment/45" for ::1 at 2016-08-17 13:23:49 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"45"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/equipment/43" for ::1 at 2016-08-17 13:23:57 +0200
+Processing by EquipmentController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cfgiwXt4x2UvNzjc69jcOcnXWvMm1xf/2sfgsOPbh0CRr7K17l7NjqrdYu3m6zOvspOdXKPqSjGKiukzA4NjTA==", "id"=>"43"}
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT  `equipment`.* FROM `equipment` WHERE `equipment`.`id` = 43 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM `equipment` WHERE `equipment`.`id` = 43[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/equipment/43
+Completed 302 Found in 7ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/equipment/43" for ::1 at 2016-08-17 13:23:57 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"43"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/equipment/43" for ::1 at 2016-08-17 14:16:10 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"43"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.6ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 100ms (Views: 95.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/equipment/43" for ::1 at 2016-08-17 14:16:26 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"43"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.4ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 32ms (Views: 29.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/equipment/43" for ::1 at 2016-08-17 14:16:39 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"43"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.4ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/equipment/43" for ::1 at 2016-08-17 14:16:47 +0200
+Processing by EquipmentController#show as HTML
+  Parameters: {"id"=>"43"}
+  Rendering equipment/show.html.erb within layouts/application
+  [1m[36mEquipment Load (0.3ms)[0m  [1m[34mSELECT `equipment`.* FROM `equipment`[0m
+  Rendered equipment/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 26ms (Views: 22.8ms | ActiveRecord: 0.3ms)
+
+

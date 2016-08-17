@@ -1,5 +1,5 @@
 class EquipmentController < ApplicationController
-	 before_action :before_checks, only: [:edit, :destroy]
+	 before_action :before_checks, only: [ :update, :destroy]
 
 	def index
 		@equipment = Equipment.all
@@ -27,12 +27,8 @@ class EquipmentController < ApplicationController
 	end
 
 	def edit
-		@equipment.edit
+		@equipment = Equipment.find(params[:id])
 	end
-
-	# def update
-	# 	@equipment = Equipment.update
-	# end
 
 	def update
     respond_to do |format|
@@ -52,8 +48,7 @@ class EquipmentController < ApplicationController
 	def destroy
 		@equipment.destroy 
 		respond_to do |format|
-    	format.html { redirect_to 'equipment', notice: 'Item successfully deleted.' }
-    	render 'index'
+    	format.html { redirect_to equipment_url, notice: 'Item successfully deleted.' }
     end
 	end
 
