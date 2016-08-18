@@ -54,8 +54,8 @@ class EquipmentController < ApplicationController
 
 	private
 	def equipment_params
-      params.require(:equipment).permit(:equipment_type, :serial_no, :status, :employee)
-    end
+      params.require(:equipment).permit(:name, :equipment_type, :serial_no, :status, :employee)
+  end
 
   def before_checks
   	@equipment = Equipment.find(params[:id])
