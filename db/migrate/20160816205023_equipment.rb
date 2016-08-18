@@ -6,7 +6,7 @@ class Equipment < ActiveRecord::Migration[5.0]
     	t.string :serial_no
     	t.string :employee # employee details
     	t.string :status #employee, storage, repairs
-      	t.timestamps
+      t.timestamps
     end
   end
 end

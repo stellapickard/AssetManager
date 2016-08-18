@@ -1,4 +1,4 @@
-class AssignTo < ApplicationRecord
+class Employee < ApplicationRecord
 	validate :employee_name, presence: true
 	validate :department, presence: true
 
